@@ -11,6 +11,14 @@ import {map} from "rxjs/operators";
 })
 export class HomeComponent implements OnInit {
 
+
+    getTime1(){
+      return new Date();
+    }
+    getTime2(){
+      return new Date();
+    }
+
     beginnerCourses$: Observable<Course[]>;
 
     advancedCourses$: Observable<Course[]>;
@@ -33,4 +41,5 @@ export class HomeComponent implements OnInit {
 
     }
 
+  protected readonly Date = Date;
 }

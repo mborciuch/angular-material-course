@@ -45,6 +45,7 @@ import {TreeDemoComponent} from './tree-demo/tree-demo.component';
 import {MatTreeModule} from '@angular/material/tree';
 import {VirtualScrollingComponent} from './virtual-scrolling/virtual-scrolling.component';
 import {ScrollingModule} from '@angular/cdk/scrolling';
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
     declarations: [
@@ -92,7 +93,8 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
         ReactiveFormsModule,
         MatGridListModule,
         MatTreeModule,
-        ScrollingModule
+        ScrollingModule,
+        NgOptimizedImage
     ],
     providers: [
         CoursesService
