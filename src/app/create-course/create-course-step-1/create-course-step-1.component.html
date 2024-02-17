@@ -1,7 +1,56 @@
 <div [formGroup]="form" class="course-details-form">
 
+  <mat-form-field>
+
+    <mat-label >Course Title</mat-label>
+    <input matInput type="text" formControlName="title" #title>
+
+    <mat-hint align="end">{{ title.value.length }} / 60</mat-hint>
+
+    <mat-error *ngIf="courseTitle.errors?.['minlength']">
+      A minimum length of 5 is required
+    </mat-error>
+  </mat-form-field>
+
+  <mat-radio-group formControlName="courseType">
+    <mat-radio-button class="radio-button" value="free">Free</mat-radio-button>
+    <mat-radio-button class="radio-button" value="premium">Premium</mat-radio-button>
+  </mat-radio-group>
+
+  <mat-form-field  appearance="outline">
+    <mat-select formControlName="category" placeholder="Select category">
+      <mat-optgroup label="Beginner">
+        <mat-option value="newprogramming">New to Programming</mat-option>
+        <mat-option value="newjavascript">New to Javasscript</mat-option>
+        <mat-option value="newangular">New to Angular</mat-option>
+
+      </mat-optgroup>
+      <mat-option>None</mat-option>
+      <mat-option value="Intermediate">Intermediate</mat-option>
+      <mat-option value="Advanced">Advanced</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Released at</mat-label>
+    <input matInput formControlName="releasedAt" [matDatepicker]="matDatepicker">
+    <mat-datepicker-toggle matSuffix [for]="matDatepicker"></mat-datepicker-toggle>
+    <mat-datepicker #matDatepicker [dateClass]="dateClass"></mat-datepicker>
+  </mat-form-field>
+
+  <mat-checkbox color="primary" [indeterminate]="true" formControlName="downloadsAllowed">
+    Downloads allowed
+  </mat-checkbox>
+
+  <mat-form-field>
+    <textarea matInput formControlName="longDescription" placeholder="description" cdkTextareaAutosize [cdkAutosizeMinRows]="2" [cdkAutosizeMaxRows]="5">
+
+    </textarea>
+
+  </mat-form-field>
+
+
 
 </div>
-
 
 
