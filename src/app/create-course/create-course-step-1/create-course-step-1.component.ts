@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {UntypedFormBuilder, Validators} from '@angular/forms';
+import {AbstractControl, UntypedFormBuilder, Validators} from '@angular/forms';
 
 
 @Component({
@@ -26,7 +26,7 @@ export class CreateCourseStep1Component {
 
   }
 
-  get courseTitle() {
+  get courseTitle(): AbstractControl<any> {
     return this.form.controls['title'];
   }
 
